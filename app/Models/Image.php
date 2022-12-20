@@ -11,6 +11,19 @@ class Image extends Model
 
     protected $fillable = [
         'path',
-        'description'
+        'description',
+        'o_id',
+        'o_type'
     ];
+
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'o_id')->where('o_type','=','user');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'o_id')->where('o_type','=','product');
+    }
 }

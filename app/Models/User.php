@@ -48,6 +48,16 @@ class User extends Authenticatable
 
     public function getImagePathAttribute()
     {
-        return null;
+        return $this->image->path;
+    }
+
+    /**
+     * Get the user associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function image()
+    {
+        return $this->hasOne(Image::class, 'o_id')->where('o_type','=','user');
     }
 }

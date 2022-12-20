@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -25,3 +27,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('products', ProductController::class);
 Route::resource('units', UnitController::class);
 Route::resource('inventories', InventoryController::class);
+Route::resource('images', ImageController::class);
+Route::resource('users', UserController::class);

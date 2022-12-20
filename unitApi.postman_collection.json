@@ -24,12 +24,46 @@
 			"response": []
 		},
 		{
+			"name": "all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all images",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/images",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "get product",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/products/1?unit_id=3",
+					"raw": "{{BASE_URL}}/products/1",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -40,8 +74,27 @@
 					"query": [
 						{
 							"key": "unit_id",
-							"value": "3"
+							"value": "1",
+							"disabled": true
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"2"
 					]
 				}
 			},
@@ -86,6 +139,85 @@
 					],
 					"path": [
 						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "manal",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "manal@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "o_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "o_type",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "path",
+							"value": "user2.jpg",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "image of user 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/images",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"images"
 					]
 				}
 			},

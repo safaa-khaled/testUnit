@@ -50,11 +50,13 @@ class ProductController extends Controller
     public function show(Product $product, Request $request)
     {
         if ($request->has('unit_id')) {
-            $productUnit = $product->units()->where('unit_id', '=', $request->unit_id)->first();
-            $productByUnit= $product->total_quantity / $productUnit->modifier;
+            $unit = Unit::find($request->unit_id);
+            $productByUnit= $product->total_quantity / $unit->modifier;
             $result = [
                 'name' => $product->name,
+                'unit_name' => $unit->name,
                 'total_quantity_by_unit_id' => $productByUnit,
+                'image_path' => $product->image_path,
             ];
             return $result;
 

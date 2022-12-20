@@ -23,6 +23,11 @@ class Product extends Model
         return $this->belongsToMany(Unit::class, 'product_unit')->withPivot('amount');
     }
 
+    public function image()
+    {
+        return $this->hasOne(Image::class, 'o_id')->where('o_type','=','product');;
+    }
+
     public function getTotalQuantityAttribute()
     {
         $totalQty=0;
@@ -38,7 +43,8 @@ class Product extends Model
 
     public function getImagePathAttribute()
     {
-        return null;
+        return $this->image->path;
+    
     }
 
 }

@@ -16,7 +16,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return $images;
     }
 
     /**
@@ -41,6 +42,9 @@ class ImageController extends Controller
             $user = User::find($request->o_id);
         if($request->o_type == 'product')
             $product = Product::find($request->o_id);
+
+            $image= Image::create($request->all());
+            return $image;
     }
 
     /**
