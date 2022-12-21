@@ -55,7 +55,7 @@ class ProductController extends Controller
             $result = [
                 'name' => $product->name,
                 'unit_name' => $unit->name,
-                'total_quantity_by_unit_id' => $productByUnit,
+                'Total_Quantity_by_Unit_id' => $productByUnit,
                 'image_path' => $product->image_path,
             ];
             return $result;
