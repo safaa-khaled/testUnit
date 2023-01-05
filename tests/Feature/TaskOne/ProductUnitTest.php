@@ -4,6 +4,7 @@ namespace Tests\Feature\TaskOne;
 
 use Tests\Feature\BaseTest;
 
+
 class ProductUnitTest extends BaseTest
 {
     public function test_adding_product_inventory()

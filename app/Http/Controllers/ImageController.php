@@ -17,7 +17,7 @@ class ImageController extends Controller
     public function index()
     {
         $images = Image::all();
-        return $images;
+        return response()->json($images);
     }
 
     /**
@@ -38,13 +38,13 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->o_type == 'user')
+        if ($request->o_type == 'user')
             $user = User::find($request->o_id);
-        if($request->o_type == 'product')
+        if ($request->o_type == 'product')
             $product = Product::find($request->o_id);
 
-            $image= Image::create($request->all());
-            return $image;
+        $image = Image::create($request->all());
+        return response()->json($image);
     }
 
     /**

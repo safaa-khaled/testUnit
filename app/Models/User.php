@@ -48,7 +48,11 @@ class User extends Authenticatable
 
     public function getImagePathAttribute()
     {
-        return $this->image->path;
+        if ($this->image != null) {
+            return $this->image->path;
+        } else {
+            return null; 
+        }   
     }
 
     /**

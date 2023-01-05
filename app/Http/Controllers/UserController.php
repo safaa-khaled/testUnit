@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return UserResource::collection($users);
+        return response()->json(UserResource::collection($users));
     }
 
     /**
@@ -48,7 +48,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return (new UserResource($user));
+        return response()->json(new UserResource($user));
     }
 
     /**
